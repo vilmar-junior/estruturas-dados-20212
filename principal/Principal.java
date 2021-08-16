@@ -1,6 +1,9 @@
 package principal;
 
 import excecoes.EstruturaCheiaException;
+import excecoes.EstruturaVaziaException;
+import excecoes.ItemNaoConstaNaListaException;
+import excecoes.OperacaoIlegalException;
 import listas.ListaVetor;
 
 /**
@@ -20,20 +23,23 @@ public class Principal {
 			lista.inserirNoFinal("Valor 2");
 			lista.inserirNoFinal("Valor 3");
 			lista.inserirNoFinal("Valor 4");
-			lista.inserirNoFinal("Valor 5");
-			lista.inserirNoFinal("Valor 6");
-			lista.inserirNoFinal("Valor 7");
-			lista.inserirNoFinal("Valor 8");
-			lista.inserirNoFinal("Valor 9");
-			lista.inserirNoFinal("Valor 10");
 
-			// Percorre a lista e mostra os valores no console
-			for (int i = 0; i < lista.getNumeroElementos(); i++) {
-				System.out.println("Item [" + i + "] da lista: " + lista.getItens()[i]);
-			}
+			int posicaoBuscada = lista.obterPosicao("Valor 3");
+			System.out.println("Posição: " + posicaoBuscada);
+			
+//			// Percorre a lista e mostra os valores no console
+//			for (int i = 0; i < lista.getNumeroElementos(); i++) {
+//				System.out.println("Item [" + i + "] da lista: " + lista.getItens()[i]);
+//			}
 		} catch (EstruturaCheiaException e) {
 			// TODO Auto-generated catch block
 			// Melhorar isso
+			e.printStackTrace();
+		} catch (EstruturaVaziaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ItemNaoConstaNaListaException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
