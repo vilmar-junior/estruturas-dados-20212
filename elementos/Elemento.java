@@ -7,21 +7,49 @@ package elementos;
  *
  */
 public class Elemento {
-
 	// Atributos
 	private Object dado;
 	private Elemento proximo;
 
-	// TODO continuar
 	// Construtores
-
-	public void inserirApos(Object novoDado) {
-		// TODO exercicio
+	public Elemento(Object dado, Elemento proximo) {
+		super();
+		this.dado = dado;
+		this.proximo = proximo;
 	}
 
+	public Elemento() {
+		super();
+	}
+
+	public void inserirApos(Object novoDado) {
+		Elemento novoElementoSeguinte = new Elemento();
+		novoElementoSeguinte.setDado(novoDado);
+
+		this.setProximo(novoElementoSeguinte); // o próximo é o novo elemento
+	}
+
+
 	public void inserirAntes(Object novoDado) {
-		// TODO exercicio
+		Elemento novoElementoAnterior = new Elemento();
+		novoElementoAnterior.setDado(novoDado);
+		novoElementoAnterior.setProximo(this); // o próximo é o elemento atual
 	}
 
 	// Métodos de acesso aos atributos (getters e setters)
+	public Object getDado() {
+		return dado;
+	}
+
+	public void setDado(Object dado) {
+		this.dado = dado;
+	}
+
+	public Elemento getProximo() {
+		return proximo;
+	}
+
+	public void setProximo(Elemento proximo) {
+		this.proximo = proximo;
+	}
 }

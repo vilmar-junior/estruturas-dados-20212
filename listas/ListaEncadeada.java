@@ -1,5 +1,6 @@
 package listas;
 
+import elementos.Elemento;
 import excecoes.EstruturaCheiaException;
 import excecoes.EstruturaVaziaException;
 
@@ -12,12 +13,16 @@ import excecoes.EstruturaVaziaException;
 public class ListaEncadeada {
 
 	// Atributos
-	//TODO definir
+	private Elemento inicio;
+	private Elemento fim;
+
+	private int tamanho;
 
 	// Construtores
 	public ListaEncadeada() {
-		// Construtor vazio
-		// TODO definir
+		inicio = null;
+		fim = null;
+		tamanho = 0;
 	}
 
 	// Métodos da lista
@@ -25,21 +30,41 @@ public class ListaEncadeada {
 	/**
 	 * Insere um novo item no final da lista
 	 *
-	 * @param novoItem
-	 * @throws EstruturaCheiaException
+	 * @param novoDado
 	 */
-	public void inserirNoFinal(Object novoItem) throws EstruturaCheiaException {
-		//TODO implementar
+	public void inserirNoFinal(Object novoDado) {
+		// Cria um novo elemento, sem item seguinte (próximo é nulo)
+		Elemento novoElemento = new Elemento(novoDado, null);
+
+		if (inicio == null) {
+			inicio = novoElemento;
+			fim = novoElemento;
+		} else {
+			fim.setProximo(novoElemento);
+			fim = novoElemento;
+		}
+
+		tamanho++;
 	}
 
 	/**
 	 * Insere um novo item no inicio da lista
 	 *
-	 * @param novoItem
-	 * @throws EstruturaCheiaException
+	 * @param novoDado
 	 */
-	public void inserirNoInicio(Object novoItem) throws EstruturaCheiaException {
-		// TODO implementar
+	public void inserirNoInicio(Object novoDado) {
+		// Cria um novo elemento, e o item seguinte é o antigo primeiro item
+		Elemento novoElemento = new Elemento(novoDado, inicio);
+
+		if (inicio == null) { // Lista vazia
+			inicio = novoElemento;
+			fim = novoElemento;
+		} else {
+			novoElemento.setProximo(inicio);
+			inicio = novoElemento;
+		}
+
+		tamanho++;
 	}
 
 	/**
@@ -68,5 +93,28 @@ public class ListaEncadeada {
 		// TODO exercicio
 	}
 
+	public Elemento getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(Elemento inicio) {
+		this.inicio = inicio;
+	}
+
+	public Elemento getFim() {
+		return fim;
+	}
+
+	public void setFim(Elemento fim) {
+		this.fim = fim;
+	}
+
+	public int getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
 
 }
