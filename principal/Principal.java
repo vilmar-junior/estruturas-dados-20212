@@ -15,16 +15,26 @@ public class Principal {
 		// Testar AQUI a criação e manipulação das estruturas
 
 		ListaEncadeada lista = new ListaEncadeada();
-		lista.inserirNoFinal("Valor 1");
-		lista.inserirNoFinal("Valor 2");
-		lista.inserirNoInicio("Novo primeiro");
+		lista.inserirNoFinal("1");
+		lista.inserirNoFinal("2");
+		lista.inserirNoFinal("3");
+		
+		System.out.println("Existe o elemento 3? " 
+		+ (lista.existeElemento("3") ? "Sim" : "Não"));
+		
+		System.out.println("Existe o elemento 4? " 
+				+ (lista.existeElemento("4") ? "Sim" : "Não"));
+		
+		lista.excluirDoFinal();
 
 		// Percorre a lista e mostra os valores no console
+		System.out.println("Lista encadeada com tamanho: " + lista.getTamanho());
 		Elemento elementoAtual = lista.getInicio();
 		int contadorItens = 0;
 		while (elementoAtual != null) {
 			contadorItens++;
-			System.out.println("Item #" + contadorItens + " da lista: " + elementoAtual.getDado());
+			System.out.println("Item #" + contadorItens + " da lista: "
+			+ elementoAtual.getDado());
 			elementoAtual = elementoAtual.getProximo();
 		}
 	}

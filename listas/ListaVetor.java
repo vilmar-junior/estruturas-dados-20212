@@ -27,14 +27,11 @@ public class ListaVetor {
 	}
 
 	public ListaVetor() {
-		// Construtor vazio
-
-		// TODO o tamanho é fixo?
 		itens = new Object[10];
 		numeroElementos = 0;
 	}
 
-	// M�todos da lista
+	// Métodos da lista
 
 	/**
 	 * Insere um novo item no final da lista
@@ -71,7 +68,6 @@ public class ListaVetor {
 		if(numeroElementos == itens.length) {
 			throw new EstruturaCheiaException("Lista está cheia");
 		}
-		
 		
 		for(int i = numeroElementos; i > posicao; i--) {
 			//Desloca o valor para a direita (faz uma cópia)
@@ -166,5 +162,4 @@ public class ListaVetor {
 	public void setNumeroElementos(int numeroElementos) {
 		this.numeroElementos = numeroElementos;
 	}
-
 }
