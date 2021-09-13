@@ -16,7 +16,7 @@ public class ListaEncadeada {
 	private Elemento inicio;
 	private Elemento fim;
 	private int tamanho;
-	
+
 	// Construtores
 	public ListaEncadeada() {
 		inicio = null;
@@ -117,10 +117,6 @@ public class ListaEncadeada {
 			}
 			tamanho--;
 		}
-	}
-
-	public Elemento obterPrimeiroElemento() throws EstruturaCheiaException {
-		return this.inicio;
 	}
 
 	public Elemento obterUltimoElemento() throws EstruturaCheiaException {
