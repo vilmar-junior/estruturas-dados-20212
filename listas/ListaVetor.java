@@ -16,18 +16,18 @@ import excecoes.OperacaoIlegalException;
 public class ListaVetor {
 
 	// Atributos
-	private Object[] itens;
+	private Integer[] itens;
 	private int numeroElementos;
 
 	// Construtores
-	public ListaVetor(Object[] itens, int numeroElementos) {
+	public ListaVetor(Integer[] itens, int numeroElementos) {
 		super();
 		this.itens = itens;
 		this.numeroElementos = numeroElementos;
 	}
 
 	public ListaVetor() {
-		itens = new Object[10];
+		itens = new Integer[10];
 		numeroElementos = 0;
 	}
 
@@ -39,7 +39,7 @@ public class ListaVetor {
 	 * @param novoItem
 	 * @throws EstruturaCheiaException
 	 */
-	public void inserirNoFinal(Object novoItem) throws EstruturaCheiaException {
+	public void inserirNoFinal(Integer novoItem) throws EstruturaCheiaException {
 		if (numeroElementos == itens.length) {
 			//Lança uma exceção --> o método termina aqui
 			throw new EstruturaCheiaException("A lista j� atingiu o seu tamanho m�ximo (" 
@@ -60,7 +60,7 @@ public class ListaVetor {
 	 * @throws OperacaoIlegalException 
 	 * @throws EstruturaCheiaException 
 	 */
-	public void inserirAntes(Object novoItem, int posicao) throws OperacaoIlegalException, EstruturaCheiaException {
+	public void inserirAntes(Integer novoItem, int posicao) throws OperacaoIlegalException, EstruturaCheiaException {
 		if(posicao < 0 || posicao >= numeroElementos) {
 			throw new OperacaoIlegalException("Posição inválida");
 		}
@@ -147,11 +147,11 @@ public class ListaVetor {
 	}
 
 	// Métodos de acesso aos atributos (getters e setters)
-	public Object[] getItens() {
+	public Integer[] getItens() {
 		return itens;
 	}
 
-	public void setItens(Object[] itens) {
+	public void setItens(Integer[] itens) {
 		this.itens = itens;
 	}
 
@@ -161,5 +161,12 @@ public class ListaVetor {
 
 	public void setNumeroElementos(int numeroElementos) {
 		this.numeroElementos = numeroElementos;
+	}
+
+	public void mostrarValoresNoConsole() {
+		Object[] vetor = this.getItens();
+		for (int i = 0; i < this.getNumeroElementos(); i++) {
+			System.out.println("Item #" + i + " do vetor: " + vetor[i]);
+		}
 	}
 }
