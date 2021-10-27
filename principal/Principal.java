@@ -25,16 +25,30 @@ public class Principal {
 		
 		// Aula 4(I)
 		testarBubbleSortEmListaVetor();
-		
-		//TODO exercício
-		//testarInsertionSortEmListaVetor();
-		//testarSelectionSortEmListaVetor();
+		testarInsertionSortEmListaVetor();
+		testarSelectionSortEmListaVetor();
 	}
 
 	private static void testarSelectionSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
 		// TODO implementar a classe OrdenadorDeVetorInsertionSort e depois testar aqui
 		System.out.println("## Teste selectionSort em lista vetor (desenvolver)");
 		
+		ListaVetor lista = new ListaVetor();
+		lista.inserirNoFinal(4);
+		lista.inserirNoFinal(3);
+		lista.inserirNoFinal(2);
+		lista.inserirNoFinal(5);
+		lista.inserirNoFinal(1);
+		
+		System.out.println("Lista ANTES da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println("");
+		
+		OrdenadorDeVetorSelectionSort selectionSort = new OrdenadorDeVetorSelectionSort(lista);
+		selectionSort.ordenar();
+		
+		System.out.println("Lista DEPOIS da ordenação");
+		lista.mostrarValoresNoConsole();
 		System.out.println();
 	}
 
@@ -42,6 +56,22 @@ public class Principal {
 		// TODO implementar a classe OrdenadorDeVetorInsertionSort e depois testar aqui
 		System.out.println("## Teste insertionSort em lista vetor (desenvolver)");
 		
+		ListaVetor lista = new ListaVetor();
+		lista.inserirNoFinal(4);
+		lista.inserirNoFinal(3);
+		lista.inserirNoFinal(2);
+		lista.inserirNoFinal(5);
+		lista.inserirNoFinal(1);
+		
+		System.out.println("Lista ANTES da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println("");
+		
+		OrdenadorDeVetorInsertionSort insertionSort = new OrdenadorDeVetorInsertionSort(lista);
+		insertionSort.ordenar();
+		
+		System.out.println("Lista DEPOIS da ordenação");
+		lista.mostrarValoresNoConsole();
 		System.out.println();
 	}
 	
