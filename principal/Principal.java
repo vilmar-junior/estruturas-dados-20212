@@ -30,7 +30,6 @@ public class Principal {
 	}
 
 	private static void testarSelectionSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
-		// TODO implementar a classe OrdenadorDeVetorInsertionSort e depois testar aqui
 		System.out.println("## Teste selectionSort em lista vetor (desenvolver)");
 		
 		ListaVetor lista = new ListaVetor();
@@ -53,7 +52,6 @@ public class Principal {
 	}
 
 	private static void testarInsertionSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
-		// TODO implementar a classe OrdenadorDeVetorInsertionSort e depois testar aqui
 		System.out.println("## Teste insertionSort em lista vetor (desenvolver)");
 		
 		ListaVetor lista = new ListaVetor();
