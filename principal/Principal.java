@@ -9,6 +9,8 @@ import listas.ListaEncadeada;
 import listas.ListaVetor;
 import ordenadores.OrdenadorDeVetorBubbleSort;
 import ordenadores.OrdenadorDeVetorInsertionSort;
+import ordenadores.OrdenadorDeVetorMergeSort;
+import ordenadores.OrdenadorDeVetorQuickSort;
 import ordenadores.OrdenadorDeVetorSelectionSort;
 
 /**
@@ -24,9 +26,57 @@ public class Principal {
 		//testarOperacoesEmListaEncadeada();
 		
 		// Aula 4(I)
-		testarBubbleSortEmListaVetor();
-		testarInsertionSortEmListaVetor();
-		testarSelectionSortEmListaVetor();
+		//testarBubbleSortEmListaVetor();
+		//testarInsertionSortEmListaVetor();
+		//testarSelectionSortEmListaVetor();
+		
+		//Aula 4(II) - Testes do Projeto 2
+		testarQuickSortEmListaVetor();
+		testarMergeSortEmListaVetor();
+	}
+	
+	private static void testarQuickSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
+		System.out.println("## Teste quickSort em lista vetor (desenvolver - opção A do Trabalho 2)");
+		
+		ListaVetor lista = new ListaVetor();
+		lista.inserirNoFinal(4);
+		lista.inserirNoFinal(1);
+		lista.inserirNoFinal(3);
+		lista.inserirNoFinal(5);
+		lista.inserirNoFinal(2);
+		
+		System.out.println("Lista ANTES da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println("");
+		
+		OrdenadorDeVetorQuickSort quickSort = new OrdenadorDeVetorQuickSort(lista);
+		quickSort.ordenar();
+		
+		System.out.println("Lista DEPOIS da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println();
+	}
+	
+	private static void testarMergeSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
+		System.out.println("## Teste mergeSort em lista vetor (desenvolver - opção B do Trabalho 2)");
+		
+		ListaVetor lista = new ListaVetor();
+		lista.inserirNoFinal(4);
+		lista.inserirNoFinal(3);
+		lista.inserirNoFinal(2);
+		lista.inserirNoFinal(5);
+		lista.inserirNoFinal(1);
+		
+		System.out.println("Lista ANTES da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println("");
+		
+		OrdenadorDeVetorMergeSort mergeSort = new OrdenadorDeVetorMergeSort(lista);
+		mergeSort.ordenar();
+		
+		System.out.println("Lista DEPOIS da ordenação");
+		lista.mostrarValoresNoConsole();
+		System.out.println();
 	}
 
 	private static void testarSelectionSortEmListaVetor() throws EstruturaCheiaException, EstruturaVaziaException {
